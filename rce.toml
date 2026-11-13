@@ -1,0 +1,16 @@
+# rce.toml (commit this file). Secrets go in rce.local.toml.
+# API reference: https://docs.rce.roku.com/core-api/index.html#/
+
+[device]
+id = 361                 # RCE device id (find it with `rce list --all`)
+snapshot = "Dev Enabled"       # snapshot name, numeric id, "live" (state at last stop) or "base" (factory reset; see `rce snapshots`)
+firmware = "v16.0.4"       # exact firmware_version_id, or a substring of id/display name (`rce firmware`); empty = first listed
+max_runtime = 1800      # seconds; RCE force-stops the emulator after this (cost cap). Org max: `rce config --check`
+
+[channel]
+path = "."              # .zip file or channel source directory, relative to this file
+exclude = [".git", ".github", "node_modules", "out", "*.zip", "rce.toml", "rce.local.toml", ".DS_Store"]
+
+# [api]                 # optional overrides
+# core_url = "https://api.rce.roku.com"
+# device_url = "https://device.rce.roku.com"   # only used if a running device has no instance_api_url
