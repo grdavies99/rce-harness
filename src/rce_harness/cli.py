@@ -31,9 +31,9 @@ CONFIG_TEMPLATE = f"""\
 # API reference: {API_DOCS}
 
 [device]
-id = 74                 # RCE device id (find it with `rce list --all`)
+id =                  # RCE device id (find it with `rce list --all`)
 snapshot = "live"       # snapshot name, numeric id, "live" (state at last stop) or "base" (factory reset; see `rce snapshots`)
-firmware = "prod"       # exact firmware_version_id, or a substring of id/display name (`rce firmware`); empty = first listed
+firmware = ""       # exact firmware_version_id, or a substring of id/display name (`rce firmware`); empty = first listed
 max_runtime = 1800      # seconds; RCE force-stops the emulator after this (cost cap). Org max: `rce config --check`
 
 [channel]
